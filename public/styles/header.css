@@ -1,7 +1,12 @@
-header {
+/*
+Header CSS
+*/
+
+#profile-header {
     height: 400px;
     width: 100%;
     margin-top: 120px;
+    box-shadow: 0px 6px 6px rgba(0,0,0,0.2);
     background-color: rgb(181, 219, 241);
     background-image: url("../images/asfalt-light.png");
     display: flex;

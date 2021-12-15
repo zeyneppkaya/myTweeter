@@ -1,8 +1,13 @@
+/*
+NAV Layout CSS
+*/
+
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: #FFFFFF;
+    box-shadow: 0px 6px 6px rgba(0,0,0,0.2);
     background-color: #4056a1;
     font-family: 'Source Sans Pro', sans-serif;
     height: 120px;
@@ -16,6 +21,7 @@ nav {
 
   #header {
     font-family: 'Bungee', sans-serif;
+    text-shadow: 0px 7px 2px rgba(0,0,0,0.2);
     font-size: 1.5em;
   }
   
@@ -24,10 +30,7 @@ nav {
     flex-direction: column;
   }
   
-  button {
+  .arrow {
     background-color: transparent;
     border-style: none;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
   }

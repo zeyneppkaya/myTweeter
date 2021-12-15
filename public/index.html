@@ -16,9 +16,16 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <!-- Header CSS-->
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <!-- New Tweet -->
+    <link rel="stylesheet" href="/styles/newTweet.css" type="text/css" />
+    <!-- All Tweets Together -->
+    <link rel="stylesheet" href="/styles/allTweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Composer Char Counter -->
+    <script src="/scripts/composer-char-counter.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -32,12 +39,12 @@
       <span id="header">tweeter</span>
       <div id="newTweet">
       <span><b>Write</b> a new tweet!</span>
-        <button type="button">
+        <button class="arrow" type="button">
         <i style="color: red" class="fa-solid fa-angles-down"></i>
       </button>
       </div>
     </nav>
-    <header>
+    <header id="profile-header">
       <div>
         <img src="/images/profile-hex.png">
       </div>
@@ -48,10 +55,57 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h3>Lorem Ipsum</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      <h3>Cat Ipsum</h3>
-      <p>Chase ball of string eat plants, meow, and throw up because I ate plants going to catch the red dot today going to catch the red dot today. I could pee on this if I had the energy. Chew iPad power cord steal the warm chair right after you get up for purr for no reason leave hair everywhere, decide to want nothing to do with my owner today.</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="post" action="/tweets">
+          <label class="tweet-text"><b>Share your thoughts with us!</b></label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button id="tweet-button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section class="tweets">
+      <article class="tweet">
+      <header>
+          <img src="/images/94418.png">
+          <h4>Jessi</h4>
+          <span class="handle">@JessiJay</span>
+      </header>
+       <div class="inner-tweets">
+         <p>Hello World.</p>
+       </div>
+        <footer class="tweet-footer">
+          5 minutes ago.
+          <span>
+            <i class="far fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="far fa-heart"></i>
+          </span>
+        </footer>
+      </article>
+      </section>
+      <section class="tweets">
+      <article class="tweet"> 
+      <header>
+        <img src="/images/99.png">
+        <h4>Alex</h4>
+        <span class="handle">@Alex35</span>
+      </header>
+        <div class="inner-tweets">
+          <p>New account new me.</p>
+        </div>
+        <footer class="tweet-footer">
+          5 hours ago.
+          <span>
+            <i class="far fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="far fa-heart"></i>
+          </span>
+        </footer>
+        </article>
+      </section>
     </main>
   </body>
 </html>
