@@ -31,9 +31,7 @@ $(document).ready(function() {
     return myNewTweet;
   };
 
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
+  // loops through tweets and calls createTweetElement for each tweet
   const renderTweets = function(tweetsArr) {
     for (const tweet of tweetsArr) {
       const $tweet = createTweetElement(tweet);
@@ -55,31 +53,27 @@ $(document).ready(function() {
 
   $('#tweetForm').submit(function(event) {
     event.preventDefault();
-  });
-
-  $(function() {
-    $('#tweet-button').on('click', function() {
-      const myNewTweet = $('textarea').serialize();
-      const newTweetsLength = $('textarea').serialize().length;
-      const emptyTweet = $('textarea').val();
-      const characterLimit = 140;
-      if (newTweetsLength > characterLimit) {
-        alert('This tweet exceeds the character limit of 140.');
-        return
-      } else if (emptyTweet === '') {
-        alert('This tweet is empty.');
-        return
-      } else {
-        $.post(
-          '/tweets',
-          myNewTweet
-        )
-        .then(function() {
-        $('textarea').val('');
-        $('.tweets').empty();
-        loadTweets(myNewTweet);
-        });
-      }
-    });
+  
+    const myNewTweet = $('textarea').serialize();
+    const characterLimit = 140;
+    const newTweetsLength = $('textarea').serialize().length;
+    const emptyTweet = $('textarea').val();
+    if (newTweetsLength > characterLimit) {
+      alert('This tweet exceeds the character limit of 140.');
+      return;
+    } else if (emptyTweet === '') {
+      alert('This tweet is empty.');
+      return;
+    } else {
+      $.post(
+        '/tweets',
+        myNewTweet
+    )
+    .then(function() {
+    $('textarea').val('');
+    $('.tweets').empty();
+    loadTweets(myNewTweet);
+     });
+    };
   });
 });
