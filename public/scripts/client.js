@@ -9,7 +9,6 @@ $(document).ready(function() {
   // A function to add a tweet to the database
   const createTweetElement = function(tweet) {
     const $tweet = $('<article>').addClass("tweet");
-
     const timeAgo = timeago.format(tweet.created_at);
 
     const htmlTweet = `
@@ -28,8 +27,8 @@ $(document).ready(function() {
     </span>
     </footer>`;
 
-    let newTweet = $tweet.append(htmlTweet);
-    return newTweet;
+    let myNewTweet = $tweet.append(htmlTweet);
+    return myNewTweet;
   };
 
   // loops through tweets
@@ -42,28 +41,45 @@ $(document).ready(function() {
     }
   };
 
-  //Adding the tweets we make to /localhost:8080/tweets
-  $('#tweetForm').submit(function(event) {
-    console.log($(this));
-    event.preventDefault();
-    $.ajax({
-      url: 'http://localhost:8080/tweets',
-      method: 'POST',
-      data: $(this).serialize()
-    })
-      .then(function() {
-      });
-  });
-
   //Fetching the tweets with Ajax
   const loadTweets = function() {
     $.ajax({
-        url: 'http://localhost:8080/tweets', 
-        method: 'GET' 
+      url: 'http://localhost:8080/tweets',
+      method: 'GET'
     })
       .then(function(tweets) {
         renderTweets(tweets);
       });
   };
   loadTweets();
+
+  $('#tweetForm').submit(function(event) {
+    event.preventDefault();
+  });
+
+  $(function() {
+    $('#tweet-button').on('click', function() {
+      const myNewTweet = $('textarea').serialize();
+      const newTweetsLength = $('textarea').serialize().length;
+      const emptyTweet = $('textarea').val();
+      const characterLimit = 140;
+      if (newTweetsLength > characterLimit) {
+        alert('This tweet exceeds the character limit of 140.');
+        return
+      } else if (emptyTweet === '') {
+        alert('This tweet is empty.');
+        return
+      } else {
+        $.post(
+          '/tweets',
+          myNewTweet
+        )
+        .then(function() {
+        $('textarea').val('');
+        $('.tweets').empty();
+        loadTweets(myNewTweet);
+        });
+      }
+    });
+  });
 });
