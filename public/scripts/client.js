@@ -6,10 +6,16 @@
 
 $(document).ready(function() {
 
+  // Escape function to prevent scripts being passed in as a tweet
+  const escapeMe = function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   // A function to add a tweet to the database
   const createTweetElement = function(tweet) {
     const $tweet = $('<article>').addClass("tweet");
-    const timeAgo = timeago.format(tweet.created_at);
 
     const htmlTweet = `
     <header>
@@ -18,9 +24,9 @@ $(document).ready(function() {
     <span class="handle">${tweet.user.handle}</span>
     </header>
     <div class="inner-tweets">
-    <p>${tweet.content.text}</p>
+    <p>${escapeMe(tweet.content.text)}</p>
     </div>
-    <footer class="tweet-footer">${timeAgo}<span>
+    <footer class="tweet-footer">${timeago.format(tweet.created_at)}<span>
     <i class="far fa-flag"></i>
     <i class="fas fa-retweet"></i>
     <i class="far fa-heart"></i>
@@ -53,27 +59,37 @@ $(document).ready(function() {
 
   $('#tweetForm').submit(function(event) {
     event.preventDefault();
-  
     const myNewTweet = $('textarea').serialize();
     const characterLimit = 140;
     const newTweetsLength = $('textarea').serialize().length;
     const emptyTweet = $('textarea').val();
     if (newTweetsLength > characterLimit) {
-      alert('This tweet exceeds the character limit of 140.');
-      return;
+      $('.error').text('This tweet exceeds the character limit of 140.');
+      $error.slideDown(500);
+      setTimeout(() => { 
+        $error.slideUp(500) 
+      }, 3000);
     } else if (emptyTweet === '') {
-      alert('This tweet is empty.');
-      return;
+      $('.error').text('This tweet is empty.');
+      $error.slideDown(500);
+      setTimeout(() => {
+        $error.slideUp(500) 
+      }, 3000);
     } else {
       $.post(
         '/tweets',
         myNewTweet
-    )
-    .then(function() {
-    $('textarea').val('');
-    $('.tweets').empty();
-    loadTweets(myNewTweet);
-     });
-    };
+      )
+      .then(function() {
+        $('textarea').val('');
+        $('.tweets').empty();
+        loadTweets(myNewTweet);
+      });
+    }
   });
+
+  //Hiding the error message so it is not visible when the form is first displayed
+  const $error = $('form').children('h4');
+  $error.hide();
+
 });

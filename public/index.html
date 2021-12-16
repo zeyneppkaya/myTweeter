@@ -63,6 +63,11 @@
         <form id="tweetForm" method="post" action="/tweets">
           <label class="tweet-text"><b>Share your thoughts with us!</b></label>
           <textarea name="text" id="tweet-text"></textarea>
+          <h4 class="error-container">
+          <i class="far fa-times-circle"></i>
+          <span class="error"></span>
+          <i class="far fa-times-circle"></i>
+          </h4>
           <div>
             <button id="tweet-button" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
