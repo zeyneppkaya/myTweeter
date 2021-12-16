@@ -3,61 +3,68 @@ All Tweets CSS
 */
 
 .tweets {
-    width: 50%;
-    padding: 1em;
-    border: solid;
-    border-color: #112994;
-    margin: 25px;
-  }
-  
-  article.tweet header {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5px; 
-  }
+  width: 50%;
+}
 
-  section.tweets:hover {
-    box-shadow: 7px 7px 2px rgba(250, 222, 61, 0.4);
-  }
-  
-  .tweets img {
-    height: 60px;
-    padding-right: 10px;
-  }
+article.tweet {
+  border: solid;
+  border-color: #112994;
+  padding: 1em;
+  margin: 25px;
+}
 
-  article.tweet header span.handle  {
-    margin-left: auto;
-    color: #020000;
-  }
-  
-  article.tweet div.inner-tweets {
-    border: #fd4de6;
-    border-bottom-style: solid;
-    border-bottom-width: 3px ;
-    font-size: 20px;
-  }
-  
-  .tweets h4 {
-    margin: 0px;
-    font-family: 'Source Sans Pro';
-  }
-  
-  .tweet-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 10px;
-    font-size: 17px;
-    padding-left: 10px;
-    padding-bottom: 0px;
-    padding-right: 10px;
-  }
+article.tweet:hover {
+  box-shadow: 7px 7px 2px rgba(250, 222, 61, 0.4);
+}
 
-  .tweets footer span i {
-      color: rgb(61, 23, 131);
-  }
-  
-  .tweets footer span i:hover {
-    opacity: 90%;
-    color: rgb(252, 217, 22);
-  }
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+article.tweet h4 {
+  margin-left: 8px;
+}
+
+.tweets img {
+  height: 60px;
+  padding-right: 10px;
+}
+
+article.tweet span.handle  {
+  margin-left: auto;
+  color: #555454;
+}
+
+article.tweet div.inner-tweets {
+  border: #fd4de6;
+  border-bottom-style: solid;
+  border-bottom-width: 3px ;
+  font-size: 20px;
+}
+.tweets h4 {
+  margin: 0px;
+  font-family: 'Source Sans Pro';
+}
+
+.tweet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10px;
+  font-size: 17px;
+  padding-left: 10px;
+  padding-bottom: 0px;
+  padding-right: 10px;
+}
+
+.tweets footer span i {
+  color: rgb(61, 23, 131);
+}
+
+.tweets footer span i:hover {
+opacity: 90%;
+color: rgb(252, 217, 22);
+}

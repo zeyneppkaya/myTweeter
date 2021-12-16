@@ -29,11 +29,14 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    
+
   </head>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  
+  <!-- Time ago -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
   <body>
     <nav>
       <span id="header">tweeter</span>
@@ -57,7 +60,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="post" action="/tweets">
+        <form id="tweetForm" method="post" action="/tweets">
           <label class="tweet-text"><b>Share your thoughts with us!</b></label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
@@ -67,44 +70,6 @@
         </form>
       </section>
       <section class="tweets">
-      <article class="tweet">
-      <header>
-          <img src="/images/94418.png">
-          <h4>Jessi</h4>
-          <span class="handle">@JessiJay</span>
-      </header>
-       <div class="inner-tweets">
-         <p>Hello World.</p>
-       </div>
-        <footer class="tweet-footer">
-          5 minutes ago.
-          <span>
-            <i class="far fa-flag"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="far fa-heart"></i>
-          </span>
-        </footer>
-      </article>
-      </section>
-      <section class="tweets">
-      <article class="tweet"> 
-      <header>
-        <img src="/images/99.png">
-        <h4>Alex</h4>
-        <span class="handle">@Alex35</span>
-      </header>
-        <div class="inner-tweets">
-          <p>New account new me.</p>
-        </div>
-        <footer class="tweet-footer">
-          5 hours ago.
-          <span>
-            <i class="far fa-flag"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="far fa-heart"></i>
-          </span>
-        </footer>
-        </article>
       </section>
     </main>
   </body>
