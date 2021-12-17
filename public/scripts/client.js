@@ -52,7 +52,7 @@ $(document).ready(function() {
       method: 'GET'
     })
       .then(function(tweets) {
-       renderTweets(tweets);
+        renderTweets(tweets);
       });
   };
   loadTweets();
@@ -66,26 +66,26 @@ $(document).ready(function() {
     if (tweet.length > characterLimit) {
       $('.error').text('This tweet exceeds the character limit of 140.');
       $error.slideDown(500);
-      setTimeout(() => { 
-        $error.slideUp(500) 
+      setTimeout(() => {
+        $error.slideUp(500);
       }, 3000);
     } else if (tweet === '') {
       $('.error').text('This tweet is empty.');
       $error.slideDown(500);
       setTimeout(() => {
-        $error.slideUp(500) 
+        $error.slideUp(500);
       }, 3000);
     } else {
       $.post(
         '/tweets',
         myNewTweet
       )
-      .then(function() {
-        $('textarea').val('');
-        $('.tweets').empty();
-        loadTweets(myNewTweet);
-        $('.counter').text('140');
-      });
+        .then(function() {
+          $('textarea').val('');
+          $('.tweets').empty();
+          loadTweets(myNewTweet);
+          $('.counter').text('140');
+        });
     }
   });
 
