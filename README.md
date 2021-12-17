@@ -14,11 +14,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## My Screenshots From The Application
 
-![Screenshot of my front page in mobile](github.com/zeyneppkaya/myTweeter/public/images/front-page-on-mobile.png)
-![Screenshot of scrolling through in mobile page](github.com/zeyneppkaya/myTweeter/public/images/scrolling-through-in-mobile.png)
-![Screenshot of my front page in desktop page](github.com/zeyneppkaya/myTweeter/public/images/frontfront-page-of-desktop-version-and-hovering-over-my-tweet.png)
-![Screenshot of empty error message](github.com/zeyneppkaya/myTweeter/public/images/empty-tweet-error.png)
-![Screenshot of error message for exceeding the tweet character limit](github.com/zeyneppkaya/myTweeter/public/images/too-many-charachters-error-message.png)
+![Screenshot of my front page in mobile](public/images/front-page-on-mobile.png)
+![Screenshot of scrolling through in mobile page](public/images/scrolling-through-in-mobile.png)
+![Screenshot of my front page in desktop page](public/images/frontfront-page-of-desktop-version-and-hovering-over-my-tweet.png)
+![Screenshot of empty error message](public/images/empty-tweet-error.png)
+![Screenshot of error message for exceeding the tweet character limit](public/images/too-many-charachters-error-message.png)
 
 ## Dependencies
 
