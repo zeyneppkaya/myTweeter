@@ -3,7 +3,8 @@ All Tweets CSS
 */
 
 .tweets {
-  width: 50%;
+  width: 90%;
+  margin: auto;
 }
 
 article.tweet {
@@ -14,7 +15,7 @@ article.tweet {
 }
 
 article.tweet:hover {
-  box-shadow: 7px 7px 2px rgba(250, 222, 61, 0.4);
+  box-shadow: 7px 7px 2px rgba(245, 216, 51, 0.4);
 }
 
 article.tweet header {
@@ -35,7 +36,7 @@ article.tweet h4 {
 
 article.tweet span.handle  {
   margin-left: auto;
-  color: #555454;
+  color: #3a3939;
 }
 
 article.tweet div.inner-tweets {
@@ -43,10 +44,12 @@ article.tweet div.inner-tweets {
   border-bottom-style: solid;
   border-bottom-width: 3px ;
   font-size: 20px;
+  overflow: auto;
+  word-break: break-all;
 }
 .tweets h4 {
   margin: 0px;
-  font-family: 'Source Sans Pro';
+  font-family: 'Merriweather';
 }
 
 .tweet-footer {

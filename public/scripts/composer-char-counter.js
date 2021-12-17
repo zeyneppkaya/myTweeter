@@ -2,17 +2,18 @@
 Composer Counter 
 */
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-    $("#tweet-text").on('keyup', function () {
-        let limit = 140 - $(this).val().length;
-        let counter = $(this).siblings('div').find('.counter');
-        counter.html(limit);
-        
-        if (limit < 0) {
-            counter.addClass("tooLong");
-        } else if (limit >= 0) {
-            counter.removeClass("tooLong");
-        }
-    })
-}); 
+    $('textarea').on('input', function() {
+      let limit = 140;
+      let tweetLength = $(this).val().length;
+      let counter = $(this).siblings('div').find('.counter');
+      counter.text(limit - tweetLength);
+  
+      if (tweetLength > limit) {
+        counter.addClass('tooLong');
+      } else if (tweetLength <= limit) {
+        counter.removeClass('tooLong');
+      }
+    });
+  });

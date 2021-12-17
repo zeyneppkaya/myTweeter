@@ -3,15 +3,15 @@ New Tweet CSS
 */
 
 .new-tweet {
-    position: relative;
-    width: 40%;
-    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top: 170px;
     padding-bottom: 2em;
-    flex-direction: column;
   }
   
   .new-tweet h2 {
-    font-size: 32px;
+    font-size: 30px;
+    font-family: 'Merriweather';
   }
   
   label[for="extra-text"] {
@@ -19,7 +19,8 @@ New Tweet CSS
   }
 
   .tweet-text {
-      font-size: 28px;
+      font-size: 24px;
+      font-family: 'Merriweather';
   }
   
   textarea {

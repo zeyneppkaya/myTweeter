@@ -15,6 +15,8 @@ html {
  */
 
 body {
+  display: flex;
+  flex-direction: column;
   color: #545149;
   background-color: rgb(243, 250, 252);
   font-size: 24px;
@@ -28,12 +30,39 @@ body {
 main {
   position: relative;
   width: 90%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
   align-items: center;
 }
 
 main p {
   width: 90%;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+
+  body {
+    flex-direction: row;
+
+  }
+  body nav {
+    background-color: #4056a1;
+
+  }
+
+  header#profile-header {
+    width: 45%;
+    margin: 20vh 4% 0;
+  }
+
+  main {
+    width: 60%;
+    margin: 20px;
+    justify-content: space-around;
+  }
+
+  article.tweet {
+    font-size: 1.5rem;
+  }
 }
